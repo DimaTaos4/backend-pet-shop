@@ -15,7 +15,7 @@ Category.hasMany(Product);
 const app = express();
 app.use(express.static('public'))
 app.use(cors({
-    origin: "https://frontend-pet-shop.vercel.app/"
+    origin: "https://frontend-pet-shop-dyk3.vercel.app"
 }));
 
 app.use(express.urlencoded());
