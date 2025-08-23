@@ -4,8 +4,6 @@ const Product = require('../database/models/product');
 
 const router = express.Router();
 
-
-
 router.get('/all', (req, res) =>{
     
     async function all(){

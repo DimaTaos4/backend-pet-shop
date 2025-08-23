@@ -15,7 +15,7 @@ Category.hasMany(Product);
 const app = express();
 app.use(express.static('public'))
 app.use(cors({
-    origin: "https://frontend-pet-shop-dyk3.vercel.app"
+    origin: "*"
 }));
 
 app.use(express.urlencoded());
@@ -29,17 +29,17 @@ app.use('/order', order);
 
 app.use(express.json());
 
-const start = async () =>{
-    try{
+const start = async () => {
+    try {
         await sequelize.sync().then(
-            result => {/*console.log(result) */},
+            result => {/*console.log(result) */ },
             err => console.log(err)
         );
-        
-        app.listen(PORT, ()=>{
+
+        app.listen(PORT, () => {
             console.log(`\n\nServer started on ${PORT} port...`)
         })
-    }catch(err){
+    } catch (err) {
         console.log(err);
     }
 }
